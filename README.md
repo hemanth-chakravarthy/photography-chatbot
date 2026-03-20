@@ -1,10 +1,10 @@
-# 📸 Photography Assistant Chatbot
+# Photography Assistant Chatbot
 
 > Your AI-powered personal photography advisor. Built with Next.js, Tailwind CSS, and the Groq API (Llama 3.3).
 
-![Project Preview](./public/preview-placeholder.png) <!-- Note: Add an actual screenshot to your public/ folder -->
+![Project Preview](![alt text](image.png))
 
-## ✨ Features
+## Features
 
 - **Context-Aware AI Guidance:** Get tailored camera settings (ISO, Aperture, Shutter Speed), composition ideas, and lens recommendations based on any scene or scenario you throw at it.
 - **Cinematic Responsive UI:**
@@ -15,7 +15,7 @@
 - **Markdown Rendering:** Beautifully formatted AI responses including bolding, bullet points, and headers, fully styled with Tailwind Typography.
 - **Custom Animations:** Cinematic initial page load (shutter aperture spinning) and smooth fade-in transitions.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Framework:** Next.js (App Router, Serverless API Routes)
 - **Language:** TypeScript
@@ -23,7 +23,7 @@
 - **LLM/API:** Groq API leveraging the `llama-3.3-70b-versatile` model
 - **Components/Icons:** Lucide React, React Markdown
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v18+)
@@ -52,7 +52,7 @@
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📂 Project Structure
+## Project Structure
 
 - `/src/components/chat`: Contains the modular UI pieces:
   - `ChatContainer.tsx`: The heart of the app — manages state, layout breaks, and API calls.
@@ -62,7 +62,7 @@
 - `/src/app/api/chat/route.ts`: Secure backend route communicating with the Groq API.
 - `/src/types/chat.ts`: Centralized TypeScript definitions.
 
-## ☁️ Deployment (Vercel)
+## Deployment (Vercel)
 
 This project is optimized for deployment on Vercel:
 1. Push this repository to GitHub.
