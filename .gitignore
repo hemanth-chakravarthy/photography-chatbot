@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# project docs
+TECH_STACK.md
+PRD.md
+IMPLEMENTATION_PLAN.md
+FRONTEND_GUIDELINES.md
+BACKEND_ARCHITECHTURE.md
+APP_FLOW.md
