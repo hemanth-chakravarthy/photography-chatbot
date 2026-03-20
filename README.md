@@ -2,7 +2,7 @@
 
 > Your AI-powered personal photography advisor. Built with Next.js, Tailwind CSS, and the Groq API (Llama 3.3).
 
-![Project Preview](![alt text](image.png))
+(image.png)
 
 ## Features
 
