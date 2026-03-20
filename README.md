@@ -70,5 +70,8 @@ This project is optimized for deployment on Vercel:
 3. Crucial: Add `GROQ_API_KEY` to your Vercel **Environment Variables**.
 4. Deploy!
 
+## Design Inspiration
+The UI and overall visual approach for this chatbot was heavily inspired by the [Mixam AI Chatbot Website Branding](https://www.behance.net/gallery/239181245/mixam-AI-shatbot-website-branding?tracking_source=search_projects|chatbot+website&l=10) project on Behance.
+
 ---
 *Developed as an AI-powered MVP for photographers.*
