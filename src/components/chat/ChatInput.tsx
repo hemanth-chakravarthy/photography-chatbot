@@ -20,10 +20,7 @@ export function ChatInput({ onSend, disabled, mobile }: ChatInputProps) {
 
   if (mobile) {
     return (
-      <div className="bg-[#f9f9f9] border border-[#e5e7eb] rounded-2xl overflow-hidden shadow-sm">
-        <div className="flex items-center gap-2 px-3 py-2 border-b border-[#f3f4f6]">
-          <span className="text-[#111827] text-sm font-semibold">✦ Photo AI</span>
-        </div>
+      <div className="bg-[#f9f9f9] border border-[#e5e7eb] rounded-[1.25rem] overflow-hidden shadow-sm">
         <form onSubmit={handleSubmit} className="flex items-center px-3 py-2 gap-2">
           <input
             type="text"

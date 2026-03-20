@@ -159,44 +159,54 @@ export function ChatContainer() {
       </div>
 
       {/* ─── MOBILE ──────────────────────────────────── */}
-      <div className="flex md:hidden flex-col h-[100dvh] bg-white">
+      <div className="flex md:hidden flex-col h-[100dvh] bg-[#fcfcfd] relative overflow-hidden">
 
         {/* Mobile top bar */}
-        <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-[#f3f4f6] bg-white shrink-0">
-          <button className="w-9 h-9 flex items-center justify-center border border-[#e5e7eb] rounded-lg text-gray-500 hover:bg-gray-50">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4.5 h-4.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-          </button>
-          <div className="flex items-center gap-0.5 bg-[#f3f4f6] rounded-full px-1 py-1">
+        <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-4 pt-4 pb-3 bg-white/70 backdrop-blur-xl border-b border-black/[0.04]">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-full bg-[#18181b] flex items-center justify-center shadow-md">
+              <span className="text-white text-sm">✦</span>
+            </div>
+            <span className="font-semibold text-[15px] tracking-tight text-[#111827]">Photo AI</span>
+          </div>
+          
+          <div className="flex items-center gap-0.5 bg-[#f3f4f6] rounded-full p-0.5 border border-black/5 shadow-inner">
             <button
               onClick={() => setMobileTab("assistant")}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+              className={`px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all ${
                 mobileTab === "assistant" ? "bg-white text-[#111827] shadow-sm" : "text-[#6b7280]"
               }`}
             >
-              Assistant Mode
+              Assistant
             </button>
             <button
               onClick={() => setMobileTab("edit")}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+              className={`px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all ${
                 mobileTab === "edit" ? "bg-white text-[#111827] shadow-sm" : "text-[#6b7280]"
               }`}
             >
-              Edit Mode
+              Editor
             </button>
           </div>
-          <button className="w-9 h-9 flex items-center justify-center border border-[#e5e7eb] rounded-lg text-gray-500 hover:bg-gray-50">
-            <span className="text-base">▾</span>
-          </button>
         </div>
 
         {/* Mobile chat area */}
-        <div className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-4 pb-36">
+        <div className="flex-1 overflow-y-auto px-4 pt-24 flex flex-col gap-4 pb-40">
           {messages.length === 0 ? (
-            <div className="flex flex-col gap-4 pt-4">
-              <p className="text-[15px] text-[#374151] leading-relaxed">
-                Ask me anything about photography — camera settings, composition, editing tips, and more.
-              </p>
-              <SuggestedPrompts onSelectPrompt={sendMessage} />
+            <div className="flex flex-col gap-6 pt-6 pb-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
+              <div>
+                <h1 className="text-[2.5rem] font-bold text-[#111827] leading-[1.05] tracking-tight">
+                  Capture.<br/>
+                  Create.<br/>
+                  <span className="text-[#9ca3af]">Elevate.</span>
+                </h1>
+                <p className="text-[15px] text-[#6b7280] leading-relaxed mt-5 max-w-[280px]">
+                  Ask me anything about photography — camera settings, composition, editing tips, and more.
+                </p>
+              </div>
+              <div className="mt-2">
+                <SuggestedPrompts onSelectPrompt={sendMessage} />
+              </div>
             </div>
           ) : (
             <>
@@ -209,31 +219,36 @@ export function ChatContainer() {
                   {error}
                 </div>
               )}
-              <div ref={messagesEndRef} />
             </>
           )}
+
           {/* Mobile product card */}
           {latestAssistantMessage && (
-            <div className="bg-white border border-[#e5e7eb] rounded-2xl p-4 mt-2 shadow-sm flex gap-3 items-center">
-              <div className="w-16 h-16 bg-[#f3f4f6] rounded-xl flex items-center justify-center shrink-0 text-2xl">📸</div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-start justify-between gap-1">
-                  <span className="font-semibold text-[#111827] text-sm leading-tight">Photography Tip</span>
-                  <button className="text-[#111827] text-xs font-medium shrink-0 underline">Show Details</button>
+            <div className="bg-white border border-black/5 rounded-[20px] p-4 mt-2 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <div className="flex gap-3 items-center">
+                <div className="w-14 h-14 bg-[#18181b] rounded-2xl flex items-center justify-center shrink-0 shadow-inner relative overflow-hidden">
+                  <span className="text-xl relative z-10 text-white">📷</span>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent" />
                 </div>
-                <p className="text-[#6b7280] text-xs mt-0.5">Professional recommendation</p>
-                <button className="mt-2 w-full bg-[#18181b] text-white text-sm py-1.5 rounded-xl font-medium hover:bg-black transition-colors">
-                  Apply Settings
-                </button>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-1">
+                    <span className="font-bold text-[#111827] text-[15px] leading-tight tracking-tight">AI Settings</span>
+                    <button className="text-[#111827] text-xs font-semibold shrink-0 bg-[#f3f4f6] hover:bg-[#e5e7eb] transition-colors px-2 py-1 rounded-md">View details</button>
+                  </div>
+                  <p className="text-[#6b7280] text-[13px] mt-0.5">Optimized for your scene</p>
+                </div>
               </div>
+              <button className="w-full bg-[#18181b] text-white text-[14px] py-2.5 rounded-xl font-medium tracking-wide hover:bg-black transition-all active:scale-[0.98]">
+                Apply to Camera
+              </button>
             </div>
           )}
+          <div ref={messagesEndRef} />
         </div>
 
         {/* Mobile bottom input */}
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#f3f4f6] pt-2 px-3 pb-6">
+        <div className="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-t border-black/[0.04] pt-3 px-4 pb-6 z-50">
           <ChatInput onSend={sendMessage} disabled={isLoading} mobile />
-          <p className="text-center text-[11px] text-[#9ca3af] mt-2">✦ photochat.app</p>
         </div>
       </div>
     </>
