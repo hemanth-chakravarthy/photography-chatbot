@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📸 Photography Assistant Chatbot
 
-## Getting Started
+> Your AI-powered personal photography advisor. Built with Next.js, Tailwind CSS, and the Groq API (Llama 3.3).
 
-First, run the development server:
+![Project Preview](./public/preview-placeholder.png) <!-- Note: Add an actual screenshot to your public/ folder -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Context-Aware AI Guidance:** Get tailored camera settings (ISO, Aperture, Shutter Speed), composition ideas, and lens recommendations based on any scene or scenario you throw at it.
+- **Cinematic Responsive UI:**
+  - **Desktop:** A stunning 2-pane "Experience UI" with a dedicated chat interface on the left and a dynamic visual recommendation card on the right.
+  - **Mobile:** Full-screen immersive chat flow with contextual quick-reply chips and inline product cards.
+- **Smart Visual Output:** The Right Panel dynamically displays 1 of 22 curated photography images based on keyword matching (e.g., "portrait", "golden hour", "bokeh") from your conversation.
+- **Live Stats Parsing:** Automatically extracts settings (ISO, f-stop, shutter speed) straight from the AI's response and renders them cleanly in a stats bar.
+- **Markdown Rendering:** Beautifully formatted AI responses including bolding, bullet points, and headers, fully styled with Tailwind Typography.
+- **Custom Animations:** Cinematic initial page load (shutter aperture spinning) and smooth fade-in transitions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** Next.js (App Router, Serverless API Routes)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS (Custom dark/light variants, glassmorphism)
+- **LLM/API:** Groq API leveraging the `llama-3.3-70b-versatile` model
+- **Components/Icons:** Lucide React, React Markdown
 
-## Learn More
+## 🚀 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
+- Node.js (v18+)
+- `pnpm` (or `npm`/`yarn`)
+- A [Groq API Key](https://console.groq.com/keys)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository and install dependencies:
+   ```bash
+   git clone <your-repo-url>
+   cd photography-chatbot
+   pnpm install
+   ```
 
-## Deploy on Vercel
+2. Set up your environment variables:
+   Create a `.env.local` file in the root directory and add your Groq API key:
+   ```env
+   GROQ_API_KEY=your_actual_groq_api_key_here
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Run the development server:
+   ```bash
+   pnpm dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📂 Project Structure
+
+- `/src/components/chat`: Contains the modular UI pieces:
+  - `ChatContainer.tsx`: The heart of the app — manages state, layout breaks, and API calls.
+  - `RightPanel.tsx`: The intelligent image/stats renderer on desktop.
+  - `ChatInput.tsx`: The branded message bar.
+  - `MessageBubble.tsx`: Renders user vs AI messages via Markdown.
+- `/src/app/api/chat/route.ts`: Secure backend route communicating with the Groq API.
+- `/src/types/chat.ts`: Centralized TypeScript definitions.
+
+## ☁️ Deployment (Vercel)
+
+This project is optimized for deployment on Vercel:
+1. Push this repository to GitHub.
+2. Import the project in your Vercel dashboard.
+3. Crucial: Add `GROQ_API_KEY` to your Vercel **Environment Variables**.
+4. Deploy!
+
+---
+*Developed as an AI-powered MVP for photographers.*
