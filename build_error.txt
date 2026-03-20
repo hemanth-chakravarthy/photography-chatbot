@@ -1,0 +1,32 @@
+
+> photo-chatbot@0.1.0 build D:\Web Development\photography-chatbot
+> next build
+
+  ▲ Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/6) ...
+   Generating static pages (1/6) 
+   Generating static pages (2/6) 
+   Generating static pages (4/6) 
+ ✓ Generating static pages (6/6)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    38.7 kB         126 kB
+├ ○ /_not-found                          873 B          88.1 kB
+└ ƒ /api/chat                            0 B                0 B
++ First Load JS shared by all            87.2 kB
+  ├ chunks/117-ee3cf2893d2ceff7.js       31.7 kB
+  ├ chunks/fd9d1056-c96c49782430d626.js  53.6 kB
+  └ other shared chunks (total)          1.86 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
